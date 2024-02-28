@@ -1,6 +1,5 @@
 import os
-
-from main import fileFormats, save_result, get_root_file
+from configs import fileFormats, save_result, get_root_file
 
 
 def main():
@@ -13,7 +12,3 @@ def main():
         filePath = os.path.join(dirPath, file)
         fileSize = os.path.getsize(filePath) / (1024 ** 2)  # mb
         save_result('size', fileFormat, 'mb', float(f"{fileSize:.2f}"), fileName)
-
-
-if __name__ == "__main__":
-    main()
