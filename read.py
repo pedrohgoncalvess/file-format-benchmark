@@ -1,4 +1,4 @@
-from main import LocalSparkSession, fileFormats, list_files, save_result, get_root_file
+from configs import LocalSparkSession, fileFormats, list_files, save_result, get_root_file
 import time
 
 
@@ -9,12 +9,11 @@ def main() -> None:
     for fileFormat in fileFormats:
         allFiles = list_files(fileFormat)
         for file in allFiles:
+            print(f"Reading {file.split('.')[-1]}.")
             start = time.time()
             dfMain = ss.read.option("header", "true").format(fileFormat).load(file)
             dfMain.show(5)
             end = time.time()
             save_result('read', fileFormat, 'sec', float(f"{end - start:.2f}"), fileName)
 
-
-if __name__ == "__main__":
-    main()
+    ss.stop()
