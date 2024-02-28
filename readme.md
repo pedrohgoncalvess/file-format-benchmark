@@ -23,3 +23,9 @@ pip install -r requirements.txt
 **For this project you will need spark and hadoop set in the environment variables, I recommend following the PySpark installation manual.**
 
 ### [PySpark installation manual](https://spark.apache.org/docs/latest/api/python/getting_started/install.html)
+
+![img.png](images/img.png)
+
+## Benchmark.conf
+
+The benchmark.conf file asks for some settings for the project to run. The first is the query that will be used to benchmark the query between the files, the second is the number of benchmarks that should be done, and the third is the benchmarks that you want to be done
